@@ -2,9 +2,12 @@
 {%block subtitle %}: Archives{% endblock %}
 {% block content %}
 <div id="posts">
-    <div id="page-header">
-        <h2>Archives</h2>
+    <div id="page-header" class="post-header">
+        <div class="container">
+            <h2>Archives</h2>
+        </div>
     </div>
+    <div class="container">
     {% for group in groups %}
         <h4>{{group.group}}</h4>
         <ul>
@@ -15,6 +18,6 @@
         {% endfor %}
         </ul>
     {% endfor %}
-
+    </div>
 </div>
 {% endblock %}

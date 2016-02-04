@@ -4,8 +4,7 @@
     <meta charset="utf-8"/>
     <title>{{title}}{% block subtitle %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
-          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
@@ -23,7 +22,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{index-uri}}">{{title}}</a>
+            <a class="navbar-brand" href="{{index-uri}}"><img src="{{blog-prefix}}/img/lambdax-white.svg" alt="Lambdax" /></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -43,48 +42,52 @@
 </nav>
 
 
-<div class="container">
 
-
-    <div class="row">
-        <div class="col-lg-9">
-            <div id="content">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div id="sidebar">
-                <h3>Links</h3>
-                <ul id="links">
-                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
-                    <li><a href="http://carmenla.me/blog/index.html">Carmen's Blog</a></li>
-                    {% for page in sidebar-pages %}
-                    <li><a href="{{page.uri}}">{{page.title}}</a></li>
-                    {% endfor %}
-                </ul>
-                {% if latest-posts|not-empty %}
-                <div id="recent">
-                    <h3>Recent Posts</h3>
-                    <ul>
-                        {% for post in latest-posts %}
-                        <li><a href="{{post.uri}}">{{post.title}}</a></li>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Links</h3>
+                    <ul id="links">
+                        <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                        <li><a href="http://carmenla.me/blog/index.html">Carmen's Blog</a></li>
+                        {% for page in sidebar-pages %}
+                        <li><a href="{{page.uri}}">{{page.title}}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
-                {% endif %}
-                {% if tags|not-empty %}
-                <div id="tags">
-                    <h3>Tags</h3>
-                    <ul>
-                        {% for tag in tags %}
-                        <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
-                        {% endfor %}
-                    </ul>
+                <div class="col-md-4">
+                    {% if latest-posts|not-empty %}
+                    <div id="recent">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                            {% for post in latest-posts %}
+                            <li><a href="{{post.uri}}">{{post.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
+                <div class="col-md-4">
+                    {% if tags|not-empty %}
+                    <div id="tags">
+                        <h3>Tags</h3>
+                        <ul>
+                            {% for tag in tags %}
+                            <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
+
+
+
         </div>
     </div>
     <footer>Copyright &copy; {{today|date:yyyy}} {{author}}
