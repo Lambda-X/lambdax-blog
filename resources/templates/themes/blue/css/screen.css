@@ -249,11 +249,14 @@ pre, code, .hljs {
     }
 
     .navbar-default .navbar-brand {
+        padding-top: 10px;
         padding-left: 10px;
+        width: 200px;
     }
 
     .navbar-nav {
         border-bottom: 1px #e7e7e7 solid;
+        margin: 0px -15px;
     }
 
     .navbar-nav>li>a {
