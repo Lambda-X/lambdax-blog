@@ -3,7 +3,7 @@
  :description        "A blog about Clojure, ClojureScript and Functional Programming"
  :site-url           "http://blogawesome.com/"
  :post-root          "posts"
- :page-root          "pages"
+ :page-root          ""
  :post-root-uri      "posts"
  :page-root-uri      "pages"
  :tag-root-uri       "tags"
