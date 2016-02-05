@@ -1,12 +1,12 @@
-{:site-title         "My Awesome Blog"
- :author             "Bob Bobbert"
- :description        "This blog is awesome"
- :site-url           "http://blogawesome.com/"
+{:site-title         "LambdaX Blog"
+ :author             "LambdaX"
+ :description        "A blog about Clojure, ClojureScript and Functional Programming"
+ :site-url           "http://lambdax.io/"
  :post-root          "posts"
  :page-root          "pages"
- :post-root-uri      "posts-output"
- :page-root-uri      "pages-output"
- :tag-root-uri       "tags-output"
+ :post-root-uri      "posts"
+ :page-root-uri      "pages"
+ :tag-root-uri       "tags"
  :blog-prefix        "/blog"
  :rss-name           "feed.xml"
  :rss-filters        ["cryogen"]
@@ -22,4 +22,4 @@
  :ignored-files      [#"\.#.*" #".*\.swp$"]
  :posts-per-page     5
  :blocks-per-preview 2
- :previews?          false}
+ :previews?          true}
