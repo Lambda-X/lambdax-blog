@@ -8,12 +8,12 @@
         </div>
     </div>
     <div class="container">
-    {% for group in groups %}
-        <h4>{{group.group}}</h4>
+      {% for group in groups %}
+        <h4>{{group.parsed-group|date:"yyyy MMMM":en}}</h4>
         <ul>
         {% for post in group.posts %}
         <li>
-            {{post.date|date:"MMM dd"}} - <a href="{{post.uri}}">{{post.title}}</a>
+            {{post.date|date:"MMM dd":en}} - <a href="{{post.uri}}">{{post.title}}</a>
         </li>
         {% endfor %}
         </ul>
