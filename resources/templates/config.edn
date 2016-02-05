@@ -3,7 +3,7 @@
  :description        "A blog about Clojure, ClojureScript and Functional Programming"
  :site-url           "http://lambdax.io/"
  :post-root          "posts"
- :page-root          ""
+ :page-root          "pages"
  :post-root-uri      "posts"
  :page-root-uri      "pages"
  :tag-root-uri       "tags"
