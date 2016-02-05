@@ -21,14 +21,17 @@ body {
 .navbar-default {
     background-color: transparent;
     border: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    margin: 0px;
+    background: url(../img/tech-bg.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .navbar-default .navbar-brand {
     display: inline-block;
     width: 300px;
+    height: auto;
+    padding: 0px;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -52,6 +55,10 @@ body {
 
 .navbar-default .navbar-nav .active a {
     color: #3d80ba;
+}
+
+.navbar-toggle {
+    background-color: white;
 }
 
 .nav {
@@ -144,7 +151,7 @@ footer {
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 20px;
-    padding: 120px 0 20px;
+    padding: 60px 0 20px;
 }
 
 .post-preview {
@@ -230,9 +237,21 @@ pre, code, .hljs {
     .navbar-default .navbar-brand {
         font-size: 30px;
     }
-    #content{
-        padding: 15px;
+
+    .post-header {
+        padding: 20px 0 20px;
     }
+
+    .navbar-default .navbar-brand {
+        padding-left: 10px;
+    }
+
+    .navbar-nav>li>a {
+        float: left;
+        background: transparent;
+        margin: 0 10px;
+    }
+ 
     #post-meta .right {
         float:left;
         text-align: left;
