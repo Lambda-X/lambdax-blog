@@ -1,7 +1,7 @@
 {:title "Snake the game - a tutorial for ClojureScript and re-frame, part 1/2"
  :layout :post
  :tags  ["ClojureScript" "Reagent" "re-frame"]
- :toc true
+ :toc false
  :author "Dajana Stiberova" }
 
 I was thinking about writing a tutorial in order to show people how to create a simple interactive application using ClojureScript/re-frame.
@@ -13,12 +13,11 @@ So I decided to make a virtue of necessity and the result is this tutorial.
 
 The first part of our tutorial has three goals:
 
-1. [Setting up the project](#setting-up-the-project)
-2. [Creating the data model](#creating-the-data-model)
-3. [Implementing the static view](#implementing-the-static-view)
+1. [Setting up the project](#setting_up_the_project)
+2. [Creating the data model](#creating_the_data_model)
+3. [Implementing the static view](#implementing_the_static_view)
 
-
-## <a name="setting-up-the-project" href="#setting-up-the-project">1. Setting up the project </a>
+## Setting up the project
 
 Download and install [leiningen](http://leiningen.org/).
 
@@ -36,7 +35,7 @@ So you can copy it from [here](https://github.com/DajanaStiberova/snake-game/blo
 
 Run `lein figwheel`, open [localhost:3449](http://localhost:3449/) in your browser and you should see that your HTML and CSS were loaded (black background).
 
-## <a name="creating-data-model" href="#creating-the-data-model">2. Creating the data model</a>
+## Creating the data model
 
 So, it's time to create our data model.
 Let's think about what we need.
@@ -89,7 +88,7 @@ Now the `initial-state` is filled and looks like this:
 
 <script src="https://gist.github.com/DajanaStiberova/d61199d296561017f13f.js"></script>
 
-## <a name="implementing-the-static-view" href="#implementing-the-static-view">3. Implementing the static view</a>
+## Implementing the static view
 
 Before explaining how we implemented the UI, we should talk a little bit about [re-frame](https://github.com/Day8/re-frame).
 In re-frame, we make mutations to the application state (or simply `db`, the atom defined by `re-frame`) only through the so called handlers.
@@ -116,14 +115,14 @@ And now we just need to call the `run` function.
 
 You can try `@re-frame.db/app-db` in the repl and you'll see that the application state is now:
 
-~~~
+```
 {:board [35 25],
  :snake {:direction [1 0],
          :body [[3 2] [2 2] [1 2] [0 2]]},
  :food [15 13],
  :points 0,
  :game-running? true}
-~~~
+```
 
 But in your browser you still see nothing, right? So let's fix that.
 
@@ -217,7 +216,7 @@ We will make the snake move, feed it with the food item and check for collisions
 
 Full source code is available on [GitHub](https://github.com/Lambda-X/snake-game/tree/v1.0).
 
-## <a name="links" href="#links">Links</a>
+## Links
 
 - [https://github.com/Day8/re-frame](https://github.com/Day8/re-frame)
 - [https://reagent-project.github.io/](https://reagent-project.github.io/)
