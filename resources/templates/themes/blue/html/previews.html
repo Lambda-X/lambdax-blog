@@ -3,6 +3,7 @@
 <div id="post">
     {% for post in posts %}
     <div class="post-header">
+      <div class="container">
         <h2>{{post.title}}</h2>
         <div id="post-meta">
             {% if post.author %}
@@ -10,9 +11,13 @@
             {% endif %}
             <div class="date">{{post.date|date:longDate}}</div>
         </div>
+      </div>
     </div>
-    {{post.content|safe}}
-    <a href="{{post.uri}}">Continue reading &#8594;</a>
+
+    <div class="container">
+      {{post.content|safe}}
+      <a href="{{post.uri}}">Continue reading &#8594;</a>
+    </div>
     <hr>
     {% endfor %}
 
@@ -24,5 +29,6 @@
         <a class="right" href="{{next-uri}}">Next &raquo;</a>
         {% endif %}
     </div>
+
 </div>
 {% endblock %}

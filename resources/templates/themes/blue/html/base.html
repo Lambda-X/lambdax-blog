@@ -27,7 +27,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li {% if home %} class="active" {% endif %}><a href="{{index-uri}}">Home</a></li>
-                <li class="active"><a href="{{site-url}}">About</a></li>
+                <li><a href="{{site-url}}">About</a></li>
                 <li {% if archives %} class="active" {% endif %}><a href="{{archives-uri}}">Archives</a></li>
                 {% for nav-page in navbar-pages %}
                 <li
