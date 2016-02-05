@@ -21,14 +21,17 @@ body {
 .navbar-default {
     background-color: transparent;
     border: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    margin: 0px;
+    background: url(../img/tech-bg.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .navbar-default .navbar-brand {
     display: inline-block;
     width: 300px;
+    height: auto;
+    padding: 0px;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -52,6 +55,16 @@ body {
 
 .navbar-default .navbar-nav .active a {
     color: #3d80ba;
+}
+
+.navbar-toggle {
+    background-color: transparent;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color:white;
 }
 
 .nav {
@@ -91,10 +104,10 @@ body {
 
 }
 
-#content img {
-    max-width: 100%;
-    height: auto;
-}
+/* #content img { */
+/*     max-width: 100%; */
+/*     height: auto; */
+/* } */
 
 footer {
     font-size: 14px;
@@ -144,11 +157,20 @@ footer {
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 20px;
-    padding: 120px 0 20px;
+    padding: 60px 0 20px;
 }
 
-.post-header-preview {
+.post-preview {
 
+}
+
+.post-preview-image {
+    width: 100%;
+    display: block;
+}
+
+.post-preview h2 {
+    margin: 0;
 }
 
 .post-header h2 {
@@ -156,6 +178,19 @@ footer {
     margin: 0;
     color: #ffffff
 }
+
+.post-preview .author {
+    color: #000;
+}
+
+.post-preview .post-preview-content {
+    margin-top: 20px;
+}
+
+.post-preview .date {
+    color: #428bca;
+}
+
 
 #post-meta {
     font-size: 14px;
@@ -208,9 +243,28 @@ pre, code, .hljs {
     .navbar-default .navbar-brand {
         font-size: 30px;
     }
-    #content{
-        padding: 15px;
+
+    .post-header {
+        padding: 20px 0 20px;
     }
+
+    .navbar-default .navbar-brand {
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 200px;
+    }
+
+    .navbar-nav {
+        border-bottom: 1px #e7e7e7 solid;
+        margin: 0px -15px;
+    }
+
+    .navbar-nav>li>a {
+        float: left;
+        background: transparent;
+        margin: 0 10px;
+    }
+
     #post-meta .right {
         float:left;
         text-align: left;

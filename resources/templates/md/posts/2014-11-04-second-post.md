@@ -1,6 +1,7 @@
 {:title "Yet Another Post"
  :layout :post
- :tags  ["very fetch"]}
+ :tags  ["very fetch"]
+ :image "post-image-ph-1.jpg"}
 
 ### This Post So Fetch
 
