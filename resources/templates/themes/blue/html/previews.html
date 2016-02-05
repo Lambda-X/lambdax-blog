@@ -2,7 +2,7 @@
 {% block content %}
 <div id="post">
     {% for post in posts %}
-    <div class="post-header">
+    <div {% if forloop.first %} class="post-header" {% else %} class="post-header-preview" {% endif %}>
       <div class="container">
         <h2>{{post.title}}</h2>
         <div id="post-meta">
