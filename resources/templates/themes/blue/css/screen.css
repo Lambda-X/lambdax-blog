@@ -22,14 +22,13 @@ body {
     background-color: transparent;
     border: none;
     margin: 0px;
-    background: url(../img/tech-bg.png) no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
+    padding: 10px 0;
+    background: #3f4a52 no-repeat center center;
 }
 
 .navbar-default .navbar-brand {
     display: inline-block;
-    width: 300px;
+    width: 260px;
     height: auto;
     padding: 0px;
 }
@@ -103,11 +102,6 @@ body {
 
 }
 
-/* #content img { */
-/*     max-width: 100%; */
-/*     height: auto; */
-/* } */
-
 footer {
     font-size: 14px;
     text-align: center;
@@ -133,6 +127,10 @@ footer {
     text-align: center;
 }
 
+#sidebar #tags a {
+    margin-bottom: 5px;
+}
+
 #post-tags a:hover, #tags a:hover{
     text-decoration: none;
     background: #ffffff;
@@ -152,11 +150,11 @@ footer {
 }
 
 .post-header {
-    background: url(../img/tech-bg.png) no-repeat center center;
+    background: #3f4a52 url(../img/greg-working.png) no-repeat center 0px;
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 20px;
-    padding: 60px 0 20px;
+    padding: 60px 0 30px;
 }
 
 .post-preview {
@@ -193,7 +191,7 @@ footer {
 
 #post-meta {
     font-size: 14px;
-    color: #fafafa
+    color: #e7e7e7;
 }
 
 #page-header {
