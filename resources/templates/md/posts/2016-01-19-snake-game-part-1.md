@@ -1,10 +1,11 @@
 {:title "Snake the game - a tutorial for ClojureScript and re-frame, part 1/2"
+ :description  "Simple tutorial on how to create Snake game using ClojureScript, reagent and re-frame, part 1/2"
  :layout :post
- :tags  ["ClojureScript" "Reagent" "re-frame"]
+ :tags  ["Clojure" "ClojureScript" "Reagent" "re-frame"]
  :toc false
- :author "Dajana Stiberova"
+ :author "Dajana Štiberová"
  :image "snake-game-1.jpeg"}
-
+ 
 I was thinking about writing a tutorial in order to show people how to create a simple interactive application using ClojureScript/re-frame.
 And then I realized that an arcade game would be a great example.
 One of the first games I played was Snake.
@@ -71,18 +72,18 @@ At the beginning every map value is `nil`. So let's fill the map with our data.
 **The food item**
 
 - The food item's position will be stored in `:points` and should have a random position which is not colliding with the snake's body.
-We will need to write a function which takes the snake and board as arguments and returns the first free random position.
+We will need to write a function which takes the snake and board as arguments and returns the first free random position. 
 If there's no available position, the function will return `nil`.
 
 <script src="https://gist.github.com/DajanaStiberova/4ce13481641693d8168e.js"></script>
 
 **The score**
 
-- The default value of the score is 0 and is stored in `:points`.
+- The default value of the score is 0 and it is stored in `:points`.
 
 **The game state**
 
-- When we start the game, the state of the `:game-running?` key is set to `true` which means that the game is running.
+- When we start the game, the value of the `:game-running?` key is set to `true` which means that the game is running.
 It will become `false` when the game is stopped for any reason.
 
 Now the `initial-state` is filled and looks like this:
@@ -127,8 +128,8 @@ You can try `@re-frame.db/app-db` in the repl and you'll see that the applicatio
 
 But in your browser you still see nothing, right? So let's fix that.
 
-We need to tell our application where we want to render our app.
-We want to render it into the `div` with the id `app` in our HTML.
+We need to tell our application where we want to render our app, that is
+into the `div` with the id `app` in our HTML.
 For this to happen we need to use the `reagent/render` function.
 This function takes a `reagent` component (it will be called `game` in our case) and a DOM node inside which the rendering will happen.
 We can get the DOM node by using JavaScript interop `(.getElementById js/document "...")`.
@@ -170,7 +171,7 @@ We will render the game board inside the existing `div`.
 
 After saving, you can see an empty board in your browser.
 
-In this step we'll modify the `render-board` function to show the snake and the food item as well.
+Now we'll modify the `render-board` function to show the snake and the food item as well.
 
 In order to react to direction changes and to the new food item location we need to create a subscription for the snake and the food item as well.
 
@@ -189,7 +190,7 @@ And add the `score` function to the `game` function.
 
 <script src="https://gist.github.com/DajanaStiberova/d755f3faa376c30a8845.js"></script>
 
-The last part of the view is the game-over overlay. This is the overlay when the `:game-running?` in the `app-state` is `false`.
+The last part of the view is the game-over overlay. This is the overlay that appears when the `:game-running?` in the `app-state` is `false`.
 
 I'm sure you know what's coming:
 we need to create a new subscription plus a new function which renders a `div` styled as an overlay.
