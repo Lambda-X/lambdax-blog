@@ -1,16 +1,16 @@
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Alegreya';
+    font-family: 'Open Sans';
 }
 
 body {
     color: #333;
-    background-color: #f2f2f2;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 16px;
 }
 
 .container {
     max-width: 1000px;
+    margin: auto auto;
 }
 
 .right {
@@ -18,19 +18,19 @@ body {
     text-align: right;
 }
 
-.navbar {
-    border-radius: 0;
-    box-shadow: 0 0 0 0,0 6px 12px rgba(34,34,34,0.3);
-}
-
 .navbar-default {
-    background-color: #428bca;
+    background-color: transparent;
     border: none;
+    margin: 0px;
+    padding: 10px 0;
+    background: #3f4a52 no-repeat center center;
 }
 
 .navbar-default .navbar-brand {
-    color: #fff;
-    font-family: 'Alegreya';
+    display: inline-block;
+    width: 260px;
+    height: auto;
+    padding: 0px;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -39,67 +39,159 @@ body {
 
 .navbar-default .navbar-nav li a {
     color: #fff;
-}
-
-.navbar-default .navbar-nav li a:hover {
-    color: #fff;
-    background-color: #3d80ba;
+    display:inline;
 }
 
 .navbar-default .navbar-nav .active a {
-    color: #fff;
-    background-color: #3d80ba;
+    background: transparent;
+    color: #3d80ba;
 }
 
-.navbar-default .navbar-toggle:hover{
-    background-color: #3d80ba;
+.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav .active a:hover {
+    color: #3d80ba;
+    background: transparent;
+}
+
+.navbar-default .navbar-nav .active a {
+    color: #3d80ba;
+}
+
+.navbar-toggle {
+    background-color: transparent;
+    margin-top: 15px;
+    margin-right: 15px;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
+    background-color:white;
+}
+
+.nav {
+    padding: 20px 0;
 }
 
 #sidebar {
-    margin-left: 15px;
-    margin-top: 50px;
+    background: #3f4a52
 }
+
+#sidebar .col-md-4 {
+    color: #ffffff;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#sidebar a{
+    color: #ffffff;
+    font-weight: 300;
+}
+
+#sidebar h3 {
+    font-size: 18px
+}
+
+#tags li {
+    display: inline-block;
+}
+
 
 #content {
-    background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0 0 0 0,0 6px 12px rgba(34,34,34,0.1);
-}
 
-#content img {
-    max-width: 100%;
-    height: auto;
 }
 
 footer {
     font-size: 14px;
     text-align: center;
-    padding-top: 75px;
+    padding-top: 30px;
+    color: #ffffff;
+    background: #3f4a52;
     padding-bottom: 30px;
 }
 
 #post-tags {
     margin-top: 30px;
+    background: #7b8790;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+#post-tags a, #tags a {
+    display: inline-block;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    margin: 0 5 0 0;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+#sidebar #tags a {
+    margin-bottom: 5px;
+}
+
+#post-tags a:hover, #tags a:hover{
+    text-decoration: none;
+    background: #ffffff;
+    color: #3f4a52;
+}
+
+#post-tags strong {margin-right: 10px;}
+
+#posts {
+    margin-bottom: 10px;
 }
 
 #prev-next {
     padding: 15px 0;
+    display: none;
+    background: #7b8790
 }
 
 .post-header {
+    background: #3f4a52 url(../img/greg-working.png) no-repeat center 0px;
+    background-size: cover;
+    background-attachment: fixed;
     margin-bottom: 20px;
+    padding: 60px 0 30px;
 }
+
+.post-preview {
+
+}
+
+.post-preview-image {
+    width: 100%;
+    display: block;
+}
+
+.post-preview h2 {
+    margin: 0;
+}
+
 .post-header h2 {
     font-size: 32px;
+    margin: 0;
+    color: #ffffff
 }
+
+.post-preview .author {
+    color: #000;
+}
+
+.post-preview .post-preview-content {
+    margin-top: 20px;
+}
+
+.post-preview .date {
+    color: #428bca;
+}
+
 
 #post-meta {
     font-size: 14px;
-    color: rgba(0,0,0,0.4)
+    color: #e7e7e7;
 }
 
 #page-header {
@@ -108,6 +200,10 @@ footer {
 }
 #page-header h2 {
     font-size: 32px;
+}
+
+#custom-page {
+    margin-bottom: 10px;
 }
 
 pre {
@@ -128,18 +224,12 @@ pre, code, .hljs {
 
 @media (min-width: 768px) {
     .navbar {
-        min-height: 70px;
+        min-height: 30px;
     }
     .navbar-nav>li>a {
-        padding: 30px 20px;
-    }
-    .navbar-default .navbar-brand {
-        font-size: 36px;
-        padding: 25px 15px;
-    }
-    #content{
-        margin-top: 30px;
-        padding: 30px 40px;
+        padding: 0;
+        background: transparent;
+        margin: 0 10px;
     }
 }
 
@@ -150,9 +240,28 @@ pre, code, .hljs {
     .navbar-default .navbar-brand {
         font-size: 30px;
     }
-    #content{
-        padding: 15px;
+
+    .post-header {
+        padding: 20px 0 20px;
     }
+
+    .navbar-default .navbar-brand {
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 200px;
+    }
+
+    .navbar-nav {
+        border-bottom: 1px #e7e7e7 solid;
+        margin: 0px -15px;
+    }
+
+    .navbar-nav>li>a {
+        float: left;
+        background: transparent;
+        margin: 0 10px;
+    }
+
     #post-meta .right {
         float:left;
         text-align: left;

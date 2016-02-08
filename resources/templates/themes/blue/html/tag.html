@@ -2,15 +2,21 @@
 {%block subtitle %}: Posts Tagged &quot;{{name}}&quot;{% endblock %}
 {% block content %}
 <div id="posts-by-tag">
-    <div id="page-header">
-        <h2>Posts Tagged &quot;{{name}}&quot;</h2>
+
+  <div id="page-header" class="post-header">
+    <div class="container">
+      <h2>Posts Tagged &quot;{{name}}&quot;</h2>
     </div>
+  </div>
+
+  <div class="container">
     <ul>
-    {% for post in posts %}
-        <li>
-            <a href="{{post.uri}}">{{post.title}}</a>
-        </li>
-    {% endfor %}
+      {% for post in posts %}
+      <li>
+        <a href="{{post.uri}}">{{post.title}}</a>
+      </li>
+      {% endfor %}
     </ul>
+  </div>
 </div>
 {% endblock %}
