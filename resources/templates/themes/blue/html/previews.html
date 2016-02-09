@@ -26,7 +26,7 @@
       {% endif %}
 
       <div class="col-xs-8 col-sm-10">
-        {{post.content|safe}}
+        {{post.description|safe}}
         <a href="{{post.uri}}">Continue reading &#8594;</a>
       </div>
     </div>
@@ -50,7 +50,7 @@
           <div class="date">{{post.date|date:longDate:en}}</div>
         </div>
         <div class="post-preview-content"
-             {{post.content|safe}}
+             {{post.description|safe}}
              <a href="{{post.uri}}">Continue reading &#8594;</a>
       </div>
       </div>
