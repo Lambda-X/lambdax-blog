@@ -10,7 +10,13 @@
       <h2>{{post.title}}</h2>
       <div id="post-meta">
         {% if post.author %}
-        <div class="author">{{post.author}}</div>
+        <div class="author">
+          {% if author-root-uri %}
+          <a href="{{author-root-uri}}/{{post.author}}.html">{{post.author}}</a>
+          {% else %}
+          {{post.author}}
+          {% endif %}
+        </div>
         {% endif %}
         <div class="date">{{post.date|date:longDate:en}}</div>
       </div>
@@ -45,7 +51,13 @@
         <h2>{{post.title}}</h2>
         <div id="post-meta">
           {% if post.author %}
-          <div class="author">{{post.author}}</div>
+          <div class="author">
+            {% if author-root-uri %}
+            <a href="{{author-root-uri}}/{{post.author}}.html">{{post.author}}</a>
+            {% else %}
+            {{post.author}}
+            {% endif %}
+          </div>
           {% endif %}
           <div class="date">{{post.date|date:longDate:en}}</div>
         </div>
@@ -53,24 +65,24 @@
              {{post.description|safe}}
              <a href="{{post.uri}}">Continue reading &#8594;</a>
       </div>
-      </div>
     </div>
   </div>
+</div>
 
+{% endif %}
+
+<hr>
+
+{% endfor %}
+
+<div id="prev-next">
+  {% if prev-uri %}
+  <a class="left" href="{{prev-uri}}">&laquo; Prev</a>
   {% endif %}
-
-  <hr>
-
-  {% endfor %}
-
-  <div id="prev-next">
-    {% if prev-uri %}
-    <a class="left" href="{{prev-uri}}">&laquo; Prev</a>
-    {% endif %}
-    {% if next-uri %}
-    <a class="right" href="{{next-uri}}">Next &raquo;</a>
-    {% endif %}
-  </div>
+  {% if next-uri %}
+  <a class="right" href="{{next-uri}}">Next &raquo;</a>
+  {% endif %}
+</div>
 
 </div>
 {% endblock %}
