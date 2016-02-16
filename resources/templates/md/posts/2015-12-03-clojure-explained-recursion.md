@@ -6,6 +6,13 @@
  :author "Tomasz Biernacki"
  :image "clojure-explained-functions.png"}
 
+<div class="alert alert-info fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  This post has been originally posted on the
+  <a href="http://blog.scalac.io/2015/12/14/clojure-explained-recursion.html">
+  Scalac blog</a>.
+</div>
+
 ## Why this post?
 
 Learning a new skill which is not related to anything you already know can be
