@@ -4,7 +4,14 @@
  :tags  ["Clojure" "ClojureScript" "GitHub" "Reagent"]
  :toc false
  :author "Andrea Richiardi"
- :image "require-cljs.png"}
+ :image "cljs-on-gh-pages.jpg"}
+
+<div class="alert alert-info fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  This post has been originally posted on the
+  <a href="http://blog.scalac.io/2015/10/19/cljs-on-gh-pages.html">
+  Scalac blog</a>.
+</div>
 
 
 Ever wondered if you can embed ClojureScript in a GitHub blog? The answer is:

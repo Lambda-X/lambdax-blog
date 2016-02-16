@@ -97,16 +97,23 @@
 </div>
 
 <script>
-if(!window.jQuery)
-{
-   var script = document.createElement('script');
-   script.type = "text/javascript";
-   script.src = "https://code.jquery.com/jquery-2.1.0.min.js";
-   document.getElementsByTagName('head')[0].appendChild(script);
+function loadScript(src) {
+  var script = document.createElement('script');
+  script.type = "text/javascript";
+  script.src = src;
+  script.async = false;
+  var sc = document.getElementsByTagName('script')[0];
+  sc.parentNode.insertBefore(script, sc);
+}
+
+window.onload = function () {
+  if(!window.jQuery) {
+    loadScript("https://code.jquery.com/jquery-2.1.0.min.js");
+  }
+
+  loadScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js");
 }
 </script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 
 {% script "js/highlight.pack.js" %}
 <script>hljs.initHighlightingOnLoad();</script>
