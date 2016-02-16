@@ -96,8 +96,8 @@ is where <q>temporary files used during compilation</q> are written, and
 `:asset-path`, that sets where to find `:output-dir` files at run-time. This
 way you have full visibility of the output.
 
-Now I was finally able to `cd` to my project, execute `lein cljsbuild once
-jekyll`, and see my generated `.js` in `scripts`. Hooray!
+Now I was finally able to `cd` to my project, execute `lein cljsbuild once jekyll`, 
+and see my generated `.js` in `scripts`. Hooray!
 
 ## The magic bit
 
