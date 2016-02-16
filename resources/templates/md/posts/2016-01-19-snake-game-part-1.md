@@ -4,7 +4,7 @@
  :tags  ["Clojure" "ClojureScript" "Reagent" "re-frame"]
  :toc false
  :author "Dajana Štiberová"
- :image "snake-game-1.jpeg"}
+ :image "snake-game.png"}
  
 I was thinking about writing a tutorial in order to show people how to create a simple interactive application using ClojureScript/re-frame.
 And then I realized that an arcade game would be a great example.
