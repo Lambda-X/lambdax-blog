@@ -6,6 +6,13 @@
  :author "Andrea Richiardi"
  :image "require-cljs.png"}
 
+<div class="alert alert-info fade in">
+<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  This post has been originally posted on the
+  <a href="http://blog.scalac.io/2015/12/21/cljs-replumb-require.html">
+Scalac blog</a>.
+</div>
+
 Replumb is a new library we decided to hack together as single point of
 reference for future implementations of ClojureScript
 [self-hosted](https://en.m.wikipedia.org/wiki/Self-hosting_compiler) REPLs. At
