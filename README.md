@@ -1,6 +1,13 @@
 # LambdaX Team Blog
 
-A place where we share our knowledge about Clojure, ClojureScript and Functional Programming. 
-To discover more about us visit our website on [lambdax.io](https://lambdax.io).
+We are a fully remote team of skilled software developers dedicated to Clojure, 
+ClojureScript, and functional programming. Our mission goes behind 
+self-improvement: we also like to share our knowledge and discoveries with 
+others, and this is what this blog is all about. To discover more about us 
+visit our website on [lambdax.io](https://lambdax.io). 
 
-Many thanks to @lacarmen for providing [cryogen](https://github.com/cryogen-project/cryogen), the engine we use for this blog.
+# Community
+
+Many thanks to @lacarmen for providing 
+[cryogen](https://github.com/cryogen-project/cryogen), the engine we use for 
+this blog.
