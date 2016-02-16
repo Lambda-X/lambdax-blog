@@ -93,8 +93,26 @@
     <footer>Copyright &copy; {% now yyyy %} {{author}}
         <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
 </div>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<script>
+function loadScript(src) {
+  var script = document.createElement('script');
+  script.type = "text/javascript";
+  script.src = src;
+  script.async = false;
+  var sc = document.getElementsByTagName('script')[0];
+  sc.parentNode.insertBefore(script, sc);
+}
+
+window.onload = function () {
+  if(!window.jQuery) {
+    loadScript("https://code.jquery.com/jquery-2.1.0.min.js");
+  }
+
+  loadScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js");
+}
+</script>
+
 {% script "js/highlight.pack.js" %}
 <script>hljs.initHighlightingOnLoad();</script>
 </body>

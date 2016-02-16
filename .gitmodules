@@ -1,0 +1,3 @@
+[submodule "resources/templates/cljs/cljs-on-gh-pages"]
+	path = resources/templates/cljs/cljs-on-gh-pages
+	url = git@github.com:ScalaConsultants/cljs-on-gh-pages

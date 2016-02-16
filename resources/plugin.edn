@@ -1,0 +1,2 @@
+{:description "Custom markdown parser"
+ :init cryogen.markup/init}
