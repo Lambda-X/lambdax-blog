@@ -30,7 +30,7 @@ In your [project.clj](https://github.com/Lambda-X/snake-game/blob/v1.0/project.c
 Rewrite your `core.cljs` (`src/snake_game/core.cljs`) to look like below.
 In this part we are requiring everything we need for our project.
 
-<script src="https://gist.github.com/DajanaStiberova/35c39e99abca511b0036.js"></script>
+<script src="https://gist.github.com/dstiberova/35c39e99abca511b0036.js"></script>
 
 You also need a CSS file in order to setup some style.
 So you can copy it from [here](https://github.com/DajanaStiberova/snake-game/blob/v1.0/resources/public/css/style.css) and paste it to `resources/public/css/style.css`.
@@ -52,7 +52,7 @@ Let's think about what we need.
 
 - All the needed data will be stored in the `initial-state` map.
 
-<script src="https://gist.github.com/DajanaStiberova/64cd34c4d8550ba208a5.js"></script>
+<script src="https://gist.github.com/dstiberova/64cd34c4d8550ba208a5.js"></script>
 
 At the beginning every map value is `nil`. So let's fill the map with our data.
 
@@ -60,14 +60,14 @@ At the beginning every map value is `nil`. So let's fill the map with our data.
 
 - The `:board` has two values: `x` (width) and `y` (height). Our board's width is 35 and height 25.
 
-<script src="https://gist.github.com/DajanaStiberova/b971b37e6259893eee1b.js"></script>
+<script src="https://gist.github.com/dstiberova/b971b37e6259893eee1b.js"></script>
 
 **The snake**
 
 - We will store the snake's `:body` in a vector of vectors `[[3 2][2 2] ..]`. Every vector is a pair of cell coordinates for a particular body part.
 - The `:direction` will be stored in a vector as well.
 
-<script src="https://gist.github.com/DajanaStiberova/d51b209f4fac547a0a46.js"></script>
+<script src="https://gist.github.com/dstiberova/d51b209f4fac547a0a46.js"></script>
 
 **The food item**
 
@@ -75,7 +75,7 @@ At the beginning every map value is `nil`. So let's fill the map with our data.
 We will need to write a function which takes the snake and board as arguments and returns the first free random position. 
 If there's no available position, the function will return `nil`.
 
-<script src="https://gist.github.com/DajanaStiberova/4ce13481641693d8168e.js"></script>
+<script src="https://gist.github.com/dstiberova/4ce13481641693d8168e.js"></script>
 
 **The score**
 
@@ -88,7 +88,7 @@ It will become `false` when the game is stopped for any reason.
 
 Now the `initial-state` is filled and looks like this:
 
-<script src="https://gist.github.com/DajanaStiberova/d61199d296561017f13f.js"></script>
+<script src="https://gist.github.com/dstiberova/d61199d296561017f13f.js"></script>
 
 ## Implementing the static view
 
@@ -102,18 +102,18 @@ We create handlers and register them by using `re-frame/register-handler`.
 The `:initialize` handler is the first handler we need.
 It will merge our `initial-state` into the application state.
 
-<script src="https://gist.github.com/DajanaStiberova/fcb001c1042d3811e09d.js"></script>
+<script src="https://gist.github.com/dstiberova/fcb001c1042d3811e09d.js"></script>
 
 If you write `@re-frame.db/app-db` in your repl, you should see the application state.
 But at this time there's only an empty map.
 That's because our `:initialize` handler hasn't been called yet.
 We'll do this by using `:dispatch-sync`.
 
-<script src="https://gist.github.com/DajanaStiberova/fcdef3122bb98b4590d5.js"></script>
+<script src="https://gist.github.com/dstiberova/fcdef3122bb98b4590d5.js"></script>
 
 And now we just need to call the `run` function.
 
-<script src="https://gist.github.com/DajanaStiberova/b2ce9cd323c5c5ba4d58.js"></script>
+<script src="https://gist.github.com/dstiberova/b2ce9cd323c5c5ba4d58.js"></script>
 
 You can try `@re-frame.db/app-db` in the repl and you'll see that the application state is now:
 
@@ -136,13 +136,13 @@ We can get the DOM node by using JavaScript interop `(.getElementById js/documen
 
 We will modify our `run` function to render our component.
 
-<script src="https://gist.github.com/DajanaStiberova/4b624fdf87395cf04991.js"></script>
+<script src="https://gist.github.com/dstiberova/4b624fdf87395cf04991.js"></script>
 
 Let's create our `game` (main rendering) function.
 This function just creates an empty `div` this time.
 To represent HTML elements we use plain Clojure data structures (if you want to know more about this syntax, visit [Hiccup](https://github.com/weavejester/hiccup)).
 
-<script src="https://gist.github.com/DajanaStiberova/ba7219c8106a1f210746.js"></script>
+<script src="https://gist.github.com/dstiberova/ba7219c8106a1f210746.js"></script>
 
 If you open the developer console in your browser ([localhost:3449](http://localhost:3449/)) you'll see the new empty `div` inside the `div` with id `app`.
 
@@ -153,7 +153,7 @@ As with handlers, each subscription is registered using a keyword, which is `:bo
 This subscription function takes a `db` as argument and any number of optional arguments.
 In the body of the function, we will dereference the `db`, extract the `:body` and wrap it in the reaction `(reaction (:board @db))`.
 
-<script src="https://gist.github.com/DajanaStiberova/31da0bdb2b80e314178e.js"></script>
+<script src="https://gist.github.com/dstiberova/31da0bdb2b80e314178e.js"></script>
 
 If you write `@(subscribe [:board])` in your repl, you'll see the board value `[35 25]`. `reagent/subscribe` returns a `reagent/reaction` which returns a deref-able object behaving like a read-only `ratom` (reactive atom).
 
@@ -161,13 +161,13 @@ Now we can connect it to our view.
 We will display our board as an HTML table by creating the `render-board` function.
 As you can see, we are using a `subscribe` in our `let` block to get the `:board` value.
 
-<script src="https://gist.github.com/DajanaStiberova/fc8ac5bb14d7fc15f543.js"></script>
+<script src="https://gist.github.com/dstiberova/fc8ac5bb14d7fc15f543.js"></script>
 
 And calling it in our main rendering function.
 We will render the game board inside the existing `div`.
 
 
-<script src="https://gist.github.com/DajanaStiberova/dd82f67fd533643678d2.js"></script>
+<script src="https://gist.github.com/dstiberova/dd82f67fd533643678d2.js"></script>
 
 After saving, you can see an empty board in your browser.
 
@@ -175,20 +175,20 @@ Now we'll modify the `render-board` function to show the snake and the food item
 
 In order to react to direction changes and to the new food item location we need to create a subscription for the snake and the food item as well.
 
-<script src="https://gist.github.com/DajanaStiberova/1c09e5416579f0a6094b.js"></script>
+<script src="https://gist.github.com/dstiberova/1c09e5416579f0a6094b.js"></script>
 
 And modify our `render-board` function. We will additionally `subscribe` the snake and the food item, and based on their indexes, use an appropriate CSS class on the table cell.
 
-<script src="https://gist.github.com/DajanaStiberova/c24ae08c282d647f9483.js"></script>
+<script src="https://gist.github.com/dstiberova/c24ae08c282d647f9483.js"></script>
 
 The score part is the simplest one of the view.
 We need to create a subscription and a `div` where the score will be located.
 
-<script src="https://gist.github.com/DajanaStiberova/6f3ef6ba51fe8d9dc5ec.js"></script>
+<script src="https://gist.github.com/dstiberova/6f3ef6ba51fe8d9dc5ec.js"></script>
 
 And add the `score` function to the `game` function.
 
-<script src="https://gist.github.com/DajanaStiberova/d755f3faa376c30a8845.js"></script>
+<script src="https://gist.github.com/dstiberova/d755f3faa376c30a8845.js"></script>
 
 The last part of the view is the game-over overlay. This is the overlay that appears when the `:game-running?` in the `app-state` is `false`.
 
@@ -199,11 +199,11 @@ If the value of `:game-running?` is `true`, the function returns an empty `div`,
 We will also render a `h1` with the symbol ↺ there, to provide a clickable target for refreshing the game.
 
 
-<script src="https://gist.github.com/DajanaStiberova/dd2653694c594f5f9f4f.js"></script>
+<script src="https://gist.github.com/dstiberova/dd2653694c594f5f9f4f.js"></script>
 
 And modify the `game` function to render `game-over`.
 
-<script src="https://gist.github.com/DajanaStiberova/7a02f3006f50f5cf2c94.js"></script>
+<script src="https://gist.github.com/dstiberova/7a02f3006f50f5cf2c94.js"></script>
 
 Now you can see the full board with the snake, the food item and the score in your browser.
 
