@@ -46,12 +46,12 @@ way of thinking, a new programming paradigm.
 If you have searched for Clojure before you could have found that it is a 
 general-purpose, dynamic programming language with the following characteristics:
 
- * it's a functional language
- * encourages immutability
- * provides the REPL, making development more interactive
- * it's a hosted language (JVM, CLR, ClojureScript for the browser)
- * being a dialect of Lisp, it allows you to write powerful macros
- * simplifies multi-threaded programming
+* it's a functional language
+* encourages immutability
+* provides the REPL, making development more interactive
+* it's a hosted language (JVM, CLR, ClojureScript for the browser)
+* being a dialect of Lisp, it allows you to write powerful macros
+* simplifies multi-threaded programming
 
 You can find more information [here](http://clojure.org/features) and 
 [here](http://clojure.org/getting_started).
