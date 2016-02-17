@@ -4,7 +4,7 @@ We are a fully remote team of skilled software developers dedicated to Clojure,
 ClojureScript, and functional programming. Our mission goes behind
 self-improvement and continuos learning: we are also eager to share our
 knowledge and discoveries with others, and this is what this blog is all about.
-You can find more info about us at [lambdax.io](https://lambdax.io).
+You can find more info about us at [lambdax.io](http://lambdax.io).
 
 ## How to blog
 
@@ -61,18 +61,18 @@ the same name as you topic branch.
 3. Add it as submodule to the blog repository:
 `git submodule add git@github.com:LambdaX/<NAME> cljs/<NAME>`
 4. Work on your project with ClojureScript.
-5. Make sure the the output files will be located in `resources/templates/scripts/<NAME>/`.
+5. Make sure the the output files will be located in `/resources/templates/scripts/<NAME>/`.
 You can do it by copying the output folder manually or set the appropriate
-flag in your build tool.
-6. In your post reference the created scripts as you would do in normal HTML,
+flags in your build tool.
+6. In your post reference the created scripts as you would normally do in HTML,
 keeping in mind the relative paths. If your script contains markdown characters,
-for example `my\_init\_module.init()` make sure that your line starts with
+for example `my_init_module.init()` make sure that your line starts with
 the `script` tag and not any other character/tag/word:
-`<script>my\_init\_module.init()</script>`
+`<script>my_init_module.init()</script>`
 This way that line will be ignored and not interpreted as markdown.
 
 # Community
 
 Many thanks to @lacarmen for providing
-[cryogen](https://github.com/cryogen-project/cryogen), the engine we use for
+[Cryogen](https://github.com/cryogen-project/cryogen), the engine we use for
 this blog.
