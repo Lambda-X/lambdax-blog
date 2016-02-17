@@ -7,7 +7,9 @@
                            [ring/ring-devel "1.4.0"]
                            [compojure "1.4.0"]
                            [ring-server "0.4.0"]
-                           [cryogen-markdown "0.1.2"]
+                           ;; we'll be using a custom markdown parser
+                           ;; [cryogen-markdown "0.1.3"]
+                           [markdown-clj "0.9.82"]
                            [cryogen-core "0.1.36"]]
             :plugins [[lein-ring "0.9.7"]]
             :main cryogen.core

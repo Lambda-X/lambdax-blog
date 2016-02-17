@@ -33,7 +33,7 @@
 
       <div class="col-xs-8 col-sm-10">
         {{post.description|safe}}
-        <div><a href="{{post.uri}}">Continue reading &#8594;</a></div>
+        <div style="margin-top: 10px;"><a href="{{post.uri}}">Continue reading &#8594;</a></div>
       </div>
     </div>
   </div>
@@ -63,13 +63,13 @@
         </div>
         <div class="post-preview-content">
           {{post.description|safe}}
-          <div><a href="{{post.uri}}">Continue reading &#8594;</a></div>
+        </div>
+        <div><a href="{{post.uri}}">Continue reading &#8594;</a></div>
       </div>
     </div>
   </div>
-</div>
 
-{% endif %}
+  {% endif %}
 
 <hr>
 

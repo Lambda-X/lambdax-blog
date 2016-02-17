@@ -16,7 +16,7 @@
  :sass-src           nil
  :sass-dest          nil
  :theme              "blue"
- :resources          ["img"]
+ :resources          ["img" "scripts"]
  :keep-files         [".git"]
  :disqus?            false
  :disqus-shortname   ""

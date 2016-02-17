@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>{{title}}{% block subtitle %}{% endblock %}</title>
+    <meta name="title" content="LambdaX blog - Clojure and ClojureScript remote development team">
+    <meta name="url" content="http://lambdax.io/blog">
+    <meta name="description" content="We are Clojure-centric software house. Functional experts dedicated to Clojure and ClojureScript | Contact us!">
+    <meta name="keywords" content="clojure,clojurescript,functional,functional programming, blog">
+    <meta name="charset" content="UTF-8">
+    <meta name="autor" content="LambdaX">
+    <meta name="company" content="LambdaX">
+    <meta name="revisit-after" content="10">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="all">
+    <meta name="classification" content="Internet">
+    <meta name="publisher" content="LambdaX">
+    <meta name="copyright" content="LambdaX 2016">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>LambdaX blog - Clojure and ClojureScript remote development team</title>
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -54,9 +69,7 @@
                     <h3>Follow us</h3>
                     <ul id="links">
                       <li class="active"><a href="https://github.com/Lambda-X">GitHub</a></li>
-                      <li class="active"><a href="https://twitter.com">Twitter</a></li>
-                      <li class="active"><a href="https://www.facebook.com">Facebook</a></li>
-                      <li class="active"><a href="https://www.linkedin.com">LinkedIn</a></li>
+                      <li class="active"><a href="https://twitter.com/lambdax_io">Twitter</a></li>
                         {% for page in sidebar-pages %}
                         <li><a href="{{page.uri}}">{{page.title}}</a></li>
                         {% endfor %}
@@ -92,11 +105,29 @@
 
         </div>
     </div>
-    <footer>Copyright &copy; {% now yyyy %} {{author}}
+    <footer>Copyright &copy; {% now yyyy %} LambdaX
         <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
 </div>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<script>
+function loadScript(src) {
+  var script = document.createElement('script');
+  script.type = "text/javascript";
+  script.src = src;
+  script.async = false;
+  var sc = document.getElementsByTagName('script')[0];
+  sc.parentNode.insertBefore(script, sc);
+}
+
+window.onload = function () {
+  if(!window.jQuery) {
+    loadScript("https://code.jquery.com/jquery-2.1.0.min.js");
+  }
+
+  loadScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js");
+}
+</script>
+
 {% script "js/highlight.pack.js" %}
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
