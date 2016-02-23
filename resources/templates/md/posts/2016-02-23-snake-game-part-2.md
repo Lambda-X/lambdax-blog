@@ -6,21 +6,19 @@
  :author "Dajana Štiberová"
  :image "snake-game.png"}
 
-## Snake game
-
 In the [first part](http://lambdax.io/blog/posts/2016-01-19-snake-game-part-1.html)
 of our tutorial we created the data model and rendered the board with the snake
 in the browser. Now it's time for the second part:
 
-1. [Making the snake move](#1._making_the_snake_move)
+1. [Make the snake move](#1._make_the_snake_move)
 2. [Actions to perform when the food item is caught](#2._actions_to_perform_when_the_food_item_is_caught)
 3. [Collisions](#3._collisions)
 4. [Game over and replay](#4._game_over_and_replay)
 5. [The end](#5._the_end)
 
-## 1. Making the snake move
+## 1. Make the snake move
 
-In order to make our snake move, we need to update its data at regular intervals.
+In order to make the snake move, we need to update its data at regular intervals.
 But first, we need to create a function which animates the snake.
 This function will take the snake map as argument and create a new one, in which
 the snake's body is moved one step forward.
@@ -122,7 +120,8 @@ it to the snake.
 
 To increase the score, we simply use the `inc` function on `:points` in db.
 
-For putting all three functions together, we will use the `process-move` function.
+For putting all the three functions together, we will use the `process-move`
+function.
 This function will take a whole db as argument, and if the first snake part
 (the head of the snake) has the same coordinate as the food item, we will
 update every key we need:
@@ -158,7 +157,7 @@ of the snake body.
 <script src="https://gist.github.com/dstiberova/d735b421e3cb869778e4.js"></script>
 
 We check for collisions in the `:next-state` handler.
-If a collision occurred, we just return the existing `db`, with the game state
+If a collision occurred, we just return the existing `db`, with `:game-running?`
 set to `false`, otherwise we call the next steps (`move-snake`, `process-move`).
 
 <script src="https://gist.github.com/dstiberova/01b2a326c444352a4165.js"></script>
@@ -177,7 +176,7 @@ of the game will be exactly the same as when the game started.
 ## 5. The end
 
 With the app-state so nicely encapsulated in one single place it's very easy to
-add features like chaning the board size or pause the game. If you want to know
+add features like changing the board size or pause the game. If you want to know
 more about this style of programming and state management I highly recommend reading
 the [re-frame tutorial](https://github.com/Day8/re-frame).
 
