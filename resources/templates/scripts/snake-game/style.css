@@ -1,0 +1,74 @@
+#app {
+    background-color: #222;
+    height: 520px;
+    width:650px;
+    margin-bottom: 20px;
+}
+
+.score {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.stage {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    margin-bottom: 25px;
+}
+
+.cell {
+    background-color: rgba(0, 0, 0, 0.15);;
+
+}
+
+table {
+    border-spacing: 2px;
+    -webkit-border-horizontal-spacing: 2px;
+    -webkit-border-vertical-spacing: 2px;
+    border-collapse: separate;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    :display: table;
+}
+
+.snake-on-cell {
+    background-color: #e30b5c;
+}
+
+.point {
+    background-color: rgb(119, 255, 51);
+}
+
+.overlay {
+    position: absolute;
+    width: 650px;
+    height: 520px;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
+
+.play {
+    height: 100px;
+    width: 80px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    z-index: 20;
+    cursor: pointer;
+    margin-top:170px;
+
+}
+
+.play h1 {
+    font-size: 100px;
+}
