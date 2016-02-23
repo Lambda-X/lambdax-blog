@@ -1,19 +1,10 @@
----
-comments: true
-date: 2016-01-20 10:00:00
-layout: post
-slug: snake-game-using-re-frame-part-2
-title: Snake the game - a tutorial for ClojureScript and re-frame 2/2
-summary: Simple tutorial on how to create Snake game using ClojureScript and reagent/re-frame 2/2
-author: Dajana Štiberová
-feed_group:  Clojure
-description:  Simple tutorial on how to create Snake game using ClojureScript and reagent/re-frame 
-tags:
-- Clojure
-- ClojureScript
-- Re-frame
-- Reagent
----
+{:title "Snake the game - a tutorial for ClojureScript and re-frame, part 2/2"
+ :description  "Simple tutorial on how to create Snake game using ClojureScript, reagent and re-frame, part 2/2"
+ :layout :post
+ :tags  ["Clojure" "ClojureScript" "Reagent" "re-frame"]
+ :toc false
+ :author "Dajana Štiberová"
+ :image "snake-game.png"}
 
 ## Snake game
 
