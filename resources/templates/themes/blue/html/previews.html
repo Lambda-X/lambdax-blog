@@ -75,13 +75,17 @@
 
 {% endfor %}
 
-<div id="prev-next">
-  {% if prev-uri %}
-  <a class="left" href="{{prev-uri}}">&laquo; Prev</a>
-  {% endif %}
-  {% if next-uri %}
-  <a class="right" href="{{next-uri}}">Next &raquo;</a>
-  {% endif %}
+<div class="container" id="prev-next">
+  <div class="col-xs-6">
+    {% if next-uri %}
+    <a class="right" href="{{next-uri}}">&laquo; Prev</a>
+    {% endif %}
+  </div>
+  <div class="col-xs-6">
+    {% if prev-uri %}
+    <a href="{{prev-uri}}">Next &raquo;</a>
+    {% endif %}
+  </div>
 </div>
 
 </div>
