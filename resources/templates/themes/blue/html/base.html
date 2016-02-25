@@ -53,7 +53,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li {% if home %} class="active" {% endif %}><a href="{{index-uri}}">Home</a></li>
-                <li><a href="{{site-url}}">About</a></li>
+                <li><a href="{{site-url}}" target="_blank">About</a></li>
                 <li {% if archives %} class="active" {% endif %}><a href="{{archives-uri}}">Archives</a></li>
                 {% for nav-page in navbar-pages %}
                 <li
@@ -79,8 +79,8 @@
                 <div class="col-md-4">
                     <h3>Follow us</h3>
                     <ul id="links">
-                      <li class="active"><a href="https://github.com/Lambda-X">GitHub</a></li>
-                      <li class="active"><a href="https://twitter.com/lambdax_io">Twitter</a></li>
+                      <li class="active"><a href="https://github.com/Lambda-X" target="_blank">GitHub</a></li>
+                      <li class="active"><a href="https://twitter.com/lambdax_io" target="_blank">Twitter</a></li>
                         {% for page in sidebar-pages %}
                         <li><a href="{{page.uri}}">{{page.title}}</a></li>
                         {% endfor %}
@@ -117,7 +117,7 @@
         </div>
     </div>
     <footer>Copyright &copy; {% now yyyy %} LambdaX
-        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org" target="_blank">Cryogen</a></p></footer>
 </div>
 
 <script>
