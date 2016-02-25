@@ -144,9 +144,7 @@ footer {
 }
 
 #prev-next {
-    padding: 15px 0;
-    display: none;
-    background: #7b8790
+    margin-bottom: 15px;
 }
 
 .post-header {
