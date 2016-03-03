@@ -267,8 +267,8 @@ Let's recap what we've learnt so far:
  we can skip the reading part and pass to the evaluator a user defined list.
 
 * Not only that: we can also perform various transformations to the list
- and only than pass it to the evaluator! But working with `eval` directly is
- cumbersome and that's why macros exists.
+ and only then pass it to the evaluator! But working with `eval` directly is
+ cumbersome and that's why macros exist.
 
 ## Macros and macro expansion
 
@@ -304,7 +304,7 @@ user=> (macroexpand '(inc10 (+ 1 2)))
 (#function[clojure.core/+] 10 (+ 1 2))
 ```
 
-### An example from the Clojure Core
+### An example from the Clojure core
 
 If you wonder why we might need such a strange feature consider the `when` ...macro.
 Yes, it's a macro!
@@ -336,14 +336,14 @@ nil
 
 But this is such a common pattern that it would be nice to have a construct that
 wraps all those forms in a `do` behind the scenes, and that's exactly what `when`
-is for:
+does:
 
 ```clojure
 user> (macroexpand '(when true (print "Absolutely") (println "True")))
 (if true (do (print "Absolutely") (println "True")))
 ```
 
-So nothing more than a list transformation. And it's even more clear if you look
+So, nothing more than a list transformation. And it's even more clear if you look
 at the implementation: `when` is a macro that accepts two parameters: `test` and
 a list of forms (`body`). Then it returns a new list with the symbol `if` as first
 element, then the `test` and the same `body` list, but with a `do` as first element.
@@ -356,9 +356,9 @@ Few notable examples are the `->`, `..` and `for` macros.
 ## Conclusion and links
 
 Macros are often seen as _magical_ but as soon as we realise that Clojure (like
-Lisp) uses the same data structure for both and data everything becomes more
+Lisp) uses the same data structure for both code and data everything becomes more
 clear. Code and data are interchangeable and macros offer an elegant and practical
-way to modify data before it's passed to the evaluator.
+way to modify data before it's passed to the evaluator as code.
 
 In this post I just scratched the surface of this subject and from here you
 should be comfortable with the following reading list:
