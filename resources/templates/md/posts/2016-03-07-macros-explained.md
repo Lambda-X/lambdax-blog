@@ -283,10 +283,10 @@ performed just before the evaluation phase. Let's see an example:
 ```clojure
 user=> (defmacro inc10
         [n]
-        (list + 10 n))
+        (list '+ 10 n))
 #'user/inc10
 user=> (macroexpand '(inc10 8))
-(#function[clojure.core/+] 10 8)
+(+ 10 8)
 user=> (inc10 8)
 18
 
@@ -296,12 +296,16 @@ We define a macro with `defmacro` and it will accept a parameter `n`. The macro
 will return a list which represents valid Clojure code and we can check that with
 the `macroexpand` function. The output list of `macroexpand` is the actual list that
 will be passed to the evaluator that in this case will evaluate `(+ 10 8)`, producing
-the value `18`. Also remember that, as we stated above, the parameters are _not_
+the value `18`. Note how the `+` symbol is quoted: thanks to that what is passed
+to the evaluator is _literally_ the `+` symbol, which will be then evaluated to the
+addition function.
+
+Also remember that, as we stated above, the parameters are _not_
 evaluated, which is one of the main differences between macro and funtion calls:
 
 ```clojure
 user=> (macroexpand '(inc10 (+ 1 2)))
-(#function[clojure.core/+] 10 (+ 1 2))
+(+ 10 (+ 1 2))
 ```
 
 ### An example from the Clojure core
@@ -309,7 +313,7 @@ user=> (macroexpand '(inc10 (+ 1 2)))
 If you wonder why we might need such a strange feature consider the `when` ...macro.
 Yes, it's a macro!
 
-```clojue
+```clojure
 user=> (clojure.repl/source when)
 (defmacro when
   "Evaluates test. If logical true, evaluates body in an implicit do."
