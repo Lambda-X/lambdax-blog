@@ -147,7 +147,7 @@ phase.
 ### The evaluator
 
 The job of the _evaluator_ is to take a valid form and evaluate it accordingly
-to certain rules. For a more detailed explanation about the evaluation rules
+to certain rules. For a more detailed explanation
 see [here](http://www.braveclojure.com/read-and-eval/#The_Evaluator),
 but in short, the evaluation rules depend on the type of the form:
 
@@ -174,9 +174,9 @@ user=> {:a 2}
 ```
 
 * if it's a **list**, Clojure will take the first argument and perform a call to
- a function. All the arguments will be evaluated recursively until the final
+ a function. All the remaining arguments will be evaluated recursively until the final
  value is returned. An exception to that are _special forms_, like `if` of
- `def`, that, as the name suggests, perform special behaviour (usually they are
+ `def` that, as the name suggests, perform special behaviour (usually they are
  implemented at the very core of the language). Another exception is a macro call,
  but we'll see that in the next section. The main difference is that with functions
  all arguments are fully evaluated, while with special forms and macros it's not
@@ -227,8 +227,8 @@ they are the same form, and that's the only thing the evaluator needs to know.
 Basically, we are telling the evaluator to take that list made of data and now
 treat it like code, and that's what it does: it evaluates it to the value `100`.
 
-And here is where the magic begins: wouldn't it be even greater if we could
-**modify our original list in our program** and only than pass it to the
+And here is where the magic begins: wouldn't it be great if we could
+**modify `my-list` programmatically** and only than pass it to the
 evaluator? After all, it's simply data...
 
 ```clojure
@@ -256,8 +256,8 @@ Let's recap what we've learnt so far:
  [homoiconic](https://en.wikipedia.org/wiki/Homoiconicity#Homoiconicity_in_Lisp).
 
 * The compiler will evaluate lists as code unless we indicate not to do so.
- In order to notify the compiler that we want just a list (and not to evaluate
- it) we need to use the `'` syntactic sugar, which is an abbreviation for `quote`
+ In order to notify the compiler that we want just a list of data
+ we need to use the `'` syntactic sugar, which is an abbreviation for `quote`
  (see
  [here](http://stackoverflow.com/questions/3896542/in-lisp-clojure-emacs-lisp-what-is-the-difference-between-list-and-quote)
  for the difference between `list` and `quote`)
@@ -266,7 +266,7 @@ Let's recap what we've learnt so far:
  can interact with them by using `read-string` and `eval`. We saw how
  we can skip the reading part and pass to the evaluator a user defined list.
 
-* Not only that: we can also perform various transformations to the list
+* Not only that: we can also perform various transformations to that list
  and only then pass it to the evaluator! But working with `eval` directly is
  cumbersome and that's why macros exist.
 
@@ -296,7 +296,7 @@ We define a macro with `defmacro` and it will accept a parameter `n`. The macro
 will return a list which represents valid Clojure code and we can check that with
 the `macroexpand` function. The output list of `macroexpand` is the actual list that
 will be passed to the evaluator that in this case will evaluate `(+ 10 8)`, producing
-the value `18`. Note how the `+` symbol is quoted: thanks to that what is passed
+the value `18`. Note how the `+` symbol is quoted: what is passed
 to the evaluator is _literally_ the `+` symbol, which will be then evaluated to the
 addition function.
 
