@@ -1,7 +1,7 @@
 {:title "Clojure Explained - In the world of functions"
  :description "For many Clojure is not only a new language but a new way of thinking. Let's start exploring some of the concepts that are hard to grasp when you first encounter this language."
  :layout :post
- :tags  ["Clojure" "ClojureScript"]
+ :tags  ["Clojure" "ClojureScript" "Fundamentals"]
  :toc false
  :author "Tomasz Biernacki"
  :image "clojure-explained-functions.png"}
