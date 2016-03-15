@@ -12,7 +12,7 @@
         {% if post.author %}
         <div class="author">
           {% if author-root-uri %}
-          <a href="{{author-root-uri}}/{{post.author}}.html">{{post.author}}</a>
+          <a href="{{blog-prefix}}/{{author-root-uri}}/{{post.author}}.html">{{post.author}}</a>
           {% else %}
           {{post.author}}
           {% endif %}
@@ -53,7 +53,7 @@
           {% if post.author %}
           <div class="author">
             {% if author-root-uri %}
-            <a href="{{author-root-uri}}/{{post.author}}.html">{{post.author}}</a>
+            <a href="{{blog-prefix}}/{{author-root-uri}}/{{post.author}}.html">{{post.author}}</a>
             {% else %}
             {{post.author}}
             {% endif %}
