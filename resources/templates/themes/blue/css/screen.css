@@ -221,6 +221,10 @@ pre, code, .hljs {
     background-color: #f7f9fd;
 }
 
+blockquote {
+    font-size: 16px;
+}
+
 @media (min-width: 768px) {
     .navbar {
         min-height: 30px;
@@ -264,6 +268,10 @@ pre, code, .hljs {
     #post-meta .right {
         float:left;
         text-align: left;
+    }
+
+    blockquote {
+        font-size: 14px;
     }
 }
 
