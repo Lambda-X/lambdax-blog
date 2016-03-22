@@ -75,7 +75,7 @@ whole `cljs.core` in it:
    (doto (empty-state) (swap! init))))
 ```
 
-<div class="greg-box">
+<div class="greg-box-small">
 
 For production builds, it is advisable to load the analysis cache for
 `cljs.core` in a separate step at runtime. In
