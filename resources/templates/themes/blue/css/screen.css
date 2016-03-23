@@ -225,6 +225,24 @@ blockquote {
     font-size: 16px;
 }
 
+.greg-box {
+    border-right: 2px solid #3f4a52;
+    padding: 0 160px 20px 0;
+    background: url(../img/greg-with-solution-2.svg) no-repeat right center;
+    background-size: 140px;
+}
+
+.greg-box-small {
+    border-right: 0;
+    border-bottom: 2px solid #3f4a52;
+    padding: 30px 300px 20px 0;
+    background: url(../img/greg-with-solution.svg) no-repeat right bottom;
+    background-size: 300px;
+    min-height: 170px;
+    box-sizing: border-box;
+}
+
+
 @media (min-width: 768px) {
     .navbar {
         min-height: 30px;
@@ -273,6 +291,20 @@ blockquote {
     blockquote {
         font-size: 14px;
     }
+
+    .greg-box-small {
+        padding: 0 0 120px 0;
+        background-size: 200px;
+        background-position: center bottom;
+    }
+
+    .greg-box {
+        padding: 0 0 120px 0;
+        background: url(../img/greg-with-solution.svg) no-repeat center bottom;
+        background-size: 200px;
+        border: 0;
+        border-bottom: 2px solid #3f4a52;
+    }
 }
 
 div.forms table {
@@ -289,3 +321,4 @@ div.forms table th, div.forms table td {
 div.forms table tr {
     border : 1px solid #BBB;
 }
+
