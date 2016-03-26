@@ -10,7 +10,7 @@
                            ;; we'll be using a custom markdown parser
                            ;; [cryogen-markdown "0.1.3"]
                            [markdown-clj "0.9.82"]
-                           [cryogen-core "0.1.36"]]
+                           [cryogen-core "0.1.39"]]
             :plugins [[lein-ring "0.9.7"]]
             :main cryogen.core
             :ring {:init cryogen.server/init
