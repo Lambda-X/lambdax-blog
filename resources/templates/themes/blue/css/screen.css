@@ -322,3 +322,17 @@ div.forms table tr {
     border : 1px solid #BBB;
 }
 
+.header-link-icon {
+    width: 16px;
+    height: 16px;
+    display: none;
+}
+
+h1:hover .header-link-icon,
+h2:hover .header-link-icon,
+h3:hover .header-link-icon,
+h4:hover .header-link-icon,
+h5:hover .header-link-icon,
+h6:hover .header-link-icon {
+    display: inline;
+}
