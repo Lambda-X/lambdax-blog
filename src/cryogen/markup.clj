@@ -20,6 +20,14 @@
     (freeze-string text state)
     [text state]))
 
+(def img-link "<img class=\"header-link-icon\" src=\"/blog/img/link-icon.png\" />")
+
+(defn make-headers-linkable
+  "Add to each header a link (hidden image)."
+  [text state]
+  [(clojure.string/replace text #"(<h[1-6]><a name=\"(.+)\"></a>.+)(</h[1-6]>)"
+                           (str "$1&nbsp;<a href=\"#$2\">" img-link "</a>$3")) state])
+
 (defn markdown
   "Returns a Markdown (https://daringfireball.net/projects/markdown/)
   implementation of the Markup protocol."
@@ -37,7 +45,8 @@
           :heading-anchors true
           :footnotes? true
           :replacement-transformers (cons ignore-script-tags
-                                          (conj transformer-vector (partial rewrite-hrefs-transformer config))))))))
+                                          (concat transformer-vector [(partial rewrite-hrefs-transformer config)
+                                                                       make-headers-linkable])))))))
 
 (defn init []
   (swap! markup-registry conj (markdown)))
