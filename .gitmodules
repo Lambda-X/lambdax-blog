@@ -1,6 +1,6 @@
 [submodule "resources/templates/cljs/cljs-on-gh-pages"]
 	path = resources/templates/cljs/cljs-on-gh-pages
-	url = git@github.com:ScalaConsultants/cljs-on-gh-pages
+	url = https://github.com/ScalaConsultants/cljs-on-gh-pages
 [submodule "resources/templates/cljs/snake-game"]
 	path = resources/templates/cljs/snake-game
-	url = git@github.com:LambdaX/snake-game.git
+	url = https://github.com/Lambda-X/snake-game
