@@ -246,9 +246,9 @@ number of threads is slightly greater than the number of physical processors),
 while `send-off` an expandable thread pool. You should not use `send` for
 blocking operations, or other agents may not be able to make progress. With
 `send-off` you can use actions that may block, like reading a file, because
-each task get potentially a dedicated thread. More info
+each task will get potentially a dedicated thread. More info
 [here](http://stackoverflow.com/questions/1646351/what-is-the-difference-between-clojures-send-and-send-off-functions-with-re)
-and [here](http://clojure-doc.org/articles/language/concurrency_and_parallelism.html#agents)
+and [here](http://clojure-doc.org/articles/language/concurrency_and_parallelism.html#agents).
 
 ```clojure
 (defn number-of-marshmallows-left
