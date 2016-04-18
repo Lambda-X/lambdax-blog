@@ -17,19 +17,19 @@ So if you want to read something about state management, or you want to know why
 
 First, we need to know that in Clojure there is a difference between _state_ and _identity_.
 
-_State_ refers to immutable data: a state is the value an identity points to at a particular time.
+_State_ refers to immutable data: a state is the value an identity refers to at a particular point in time.
 State never changes.
 
 An _identity_ unifies different values over the time.
 Identity types are mutable references to immutable values
-and can be modeled by using one of the four references types: _vars_, _atoms_, _agents_ and _refs_.
+and can be modeled by using one of the four reference types: _vars_, _atoms_, _agents_ and _refs_.
 
 ### *Example*
 
 In order to explain better the concepts behind state management we'll use the
 best cat on Earth, Simon's Cat, as our example.
 Simon's Cat is an identity.
-Simon's Cat promised to his girlfriend to go to the Halloween party. But Simon's Cat is really scared of spiders,
+Simon's Cat promised to his girlfriend to go to the Halloween party, but he's really scared of spiders,
 and at the Halloween party there will be many of them everywhere.
 So he's trying to hide into a box, and as you can see, the box is too small.
 Every move he makes can be thought as one state.
@@ -47,7 +47,7 @@ and subsequently calling the appropriate functions to create new states.
 </div>
 </div>
 NOTE:
-If you don't have any knowledge about threads in Clojure, you should read about [it](http://blog.clojuregirl.com/clojure_threads.html) first.
+If you don't have any knowledge about threads in Clojure, you should read [this](http://blog.clojuregirl.com/clojure_threads.html) first.
 
 ## How we can manage state (or how the data might change over time)
 <div>
@@ -70,7 +70,7 @@ We can create a _var_ by using `def`: `(def marshmallows-in-the-bag)`.
 This _var_ will be a reference to the amount of marshmallows in one bag.
 
 If we define a _var_ as `^:dynamic` (by adding the `:^dynamic` metadata part),
-we'll be able to rebound it in a different context later and this rebinding will be available only within its dynamic scope.
+we'll also be able to rebound it in a different context later and this rebinding will be available only within its dynamic scope.
 
 ```clojure
 (def ^:dynamic *marshmallows-in-the-bag* 30)
@@ -93,7 +93,7 @@ In this first case, the scope is the code block where we define the symbols. The
 The lexical scope can be defined for example by the `let` block.
 
 Let's imagine that in the bag there are `30` marshmallows.
-We will define `marshmallows-in-the-bag` with a value of `30`.
+We will define `marshmallows-in-the-bag` with an initial value of `30`.
 
 ```clojure
 (def marshmallows-in-the-bag 30)
