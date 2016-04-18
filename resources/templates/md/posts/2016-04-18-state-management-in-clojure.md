@@ -120,7 +120,7 @@ we'll find out that there are `20` marshmallows left in the bag.
 
 ### Dynamic Scope
 
-In contrast to _lexical scope_, the dynamic scope does not depend on the code block, but on the runtime call stack.
+In contrast to _lexical scope_, the _dynamic scope_ does not depend on the code block, but on the runtime call stack.
 
 The best way to understand the difference is to look at the code below.
 
@@ -130,7 +130,8 @@ The best way to understand the difference is to look at the code below.
 (defn marshmallows-left []
   (println (str "Marshmallows in the bag: " *marshmallows-in-the-bag*)))
 
-(defn number-of-marshmallows-left [marshmallows-eaten]
+(defn number-of-marshmallows-left
+  [marshmallows-eaten]
   (binding [*marshmallows-in-the-bag* (- *marshmallows-in-the-bag* marshmallows-eaten)]
     (marshmallows-left)))
 ```
@@ -205,8 +206,7 @@ This is how `swap!` behaves under the hood:
 ```
 We created a `number-of-marshmalloes-left` function, which takes one argument `marshmallows-eaten`.
 We passed to `swap!` a function which will be called with the current value of `marshmallows-in-the-bag`
-as first argument. This function subtracts `marshmallows-eaten` from the current
-state.
+as first argument. This function subtracts `marshmallows-eaten` from the current state.
 
 ```clojure
 (number-of-marshmallows-left 10)
