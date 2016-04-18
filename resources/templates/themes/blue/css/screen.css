@@ -242,6 +242,43 @@ blockquote {
     box-sizing: border-box;
 }
 
+#identity {
+    display: inline-block;
+    width: 30%;
+}
+
+#state {
+    display: inline-block;
+    width: 30%;
+    /* float: right; */
+
+}
+
+#simons-text {
+    display: inline-block;
+    width: 70%;
+}
+
+#simons-pic {
+    display: inline-block;
+    width: 30%;
+    float: right;
+
+}
+
+#simons-text-end {
+    display: inline-block;
+    width: 87%; 
+    float: left;
+    margin-bottom: 30px;
+
+}
+
+#simons-pic-end {
+    width: 13%;
+    display: inline-block;
+    float: right;
+}
 
 @media (min-width: 768px) {
     .navbar {
@@ -305,6 +342,48 @@ blockquote {
         border: 0;
         border-bottom: 2px solid #3f4a52;
     }
+
+    #identity {
+        display: block;
+        width: 100%;
+        text-align: center;
+        
+    }
+
+    #state {
+        display: block;
+        width: auto;
+
+    }
+
+    #simons-text {
+        display: block;
+        width: auto;
+    }
+
+    #simons-pic {
+        display: block;
+        width: auto;
+        float: none;
+
+    }
+
+    #simons-text-end {
+        display: block;
+        width: auto; 
+        float: none;
+
+    }
+
+    #simons-pic-end {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    #state img {
+        max-width: 100%;
+    }
 }
 
 div.forms table {
@@ -336,3 +415,4 @@ h5:hover .header-link-icon,
 h6:hover .header-link-icon {
     display: inline;
 }
+
