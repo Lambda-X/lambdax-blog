@@ -299,7 +299,7 @@ First we need to define the _refs_ for `marshmallow`, `gummy-bears`,
 We can dereference _refs_ as usual:
 
 ```clojure
-@greg
+@simona
 ;;=> {:candies-eaten 0}
 ```
 
@@ -316,7 +316,7 @@ It means that _refs_ will be updated in a transactional, coordinated way.
   (if (> (:count-in-the-bag @candy) 0)
     (dosync
      (alter candy update-in [:count-in-the-bag] dec)
-     (alter name update-in [:candies-eaten] inc))
+     (alter cat update-in [:candies-eaten] inc))
   (println (str "No candies in the " (:name @candy) " bag"))))
 ```
 
@@ -333,12 +333,10 @@ Let's see what happens when Simona eats one gummy bear:
 ;;=> {:candies-eaten 1}
 
 @marshmallow
-;;=> {:name "marshmallow"
-;;    :count-in-the-bag 30}
+;;=> {:name "marshmallow", :count-in-the-bag 30}
 
 @gummy-bears
-;; => {:name "gummy-bears"
-;;     :count-in-the-bag 19}
+;; => {:name "gummy-bears", :count-in-the-bag 19}
 ```
 
 <div>
