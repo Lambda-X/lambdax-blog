@@ -259,13 +259,13 @@ and [here](http://clojure-doc.org/articles/language/concurrency_and_parallelism.
 If you call the `number-of-marshmallows-left` function,
 there's a possibility that the value is still not updated.
 
-```Clojure
+```clojure
 @marshmallows-in-the-bag
 ;;=> 30
 ```
 Few seconds later...
 
-```Clojure
+```clojure
 @marshmallows-in-the-bag
 ;;=> 20
 ```
