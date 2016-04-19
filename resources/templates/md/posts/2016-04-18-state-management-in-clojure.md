@@ -69,7 +69,7 @@ Cats love candies and as we know, their favorite ones are yummy marshmallows and
 We can create a _var_ by using `def`: `(def marshmallows-in-the-bag)`.
 This _var_ will be a reference to the amount of marshmallows in one bag.
 
-If we define a _var_ as `^:dynamic` (by adding the `:^dynamic` metadata part),
+If we define a _var_ as `^:dynamic` (by adding the `^:dynamic` metadata part),
 we'll also be able to rebound it in a different context later and this rebinding will be available only within its dynamic scope.
 
 ```clojure
@@ -320,7 +320,7 @@ It means that _refs_ will be updated in a transactional, coordinated way.
   (println (str "No candies in the " (:name @candy) " bag"))))
 ```
 
-Let's see what happens when Simona east one gummy bear:
+Let's see what happens when Simona eats one gummy bear:
 
 ```clojure
 (eat-candy simona gummy-bears)
