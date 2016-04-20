@@ -155,7 +155,8 @@ To show the difference between the two scopes we'll do the same using the `let` 
 (defn marshmallows-left []
   (println (str "Marshmallows: " *marshmallows-in-the-bag*)))
 
-(defn number-of-marshmallows-left [marshmallows-eaten]
+(defn number-of-marshmallows-left
+  [marshmallows-eaten]
   (let [*marshmallows-in-the-bag* (- *marshmallows-in-the-bag* marshmallows-eaten)]
     (marshmallows-left)))
 ```
@@ -167,7 +168,7 @@ And if we call `numbers-of-marshmallows-left` with `10` as argument, the result 
 ;;=> Marshmallows: 30
 ```
 
-That's because we defined `marshmallows-in-the-bag` in the `let` code block and as we know the new value of the `marshmallows-in-the-bag` is valid only within its lexical scope (hence not in the function `marshmallows-left`, for which the value of `*marshmallows-in-the bag*` is still 30).
+That's because we defined `*marshmallows-in-the-bag*` in the `let` code block and as we know the new value of `*marshmallows-in-the-bag*` is valid only within its lexical scope (hence not in the function `marshmallows-left`, for which the value of `*marshmallows-in-the bag*` is still 30).
 
 ### Atoms
 
