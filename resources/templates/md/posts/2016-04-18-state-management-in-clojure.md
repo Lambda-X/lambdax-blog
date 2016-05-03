@@ -17,19 +17,19 @@ So if you want to read something about state management, or you want to know why
 
 First, we need to know that in Clojure there is a difference between _state_ and _identity_.
 
-_State_ refers to immutable data: a state is the value an identity points to at a particular time.
+_State_ refers to immutable data: a state is the value an identity refers to at a particular point in time.
 State never changes.
 
 An _identity_ unifies different values over the time.
 Identity types are mutable references to immutable values
-and can be modeled by using one of the four references types: _vars_, _atoms_, _agents_ and _refs_.
+and can be modeled by using one of the four reference types: _vars_, _atoms_, _agents_ and _refs_.
 
 ### *Example*
 
 In order to explain better the concepts behind state management we'll use the
 best cat on Earth, Simon's Cat, as our example.
 Simon's Cat is an identity.
-Simon's Cat promised to his girlfriend to go to the Halloween party. But Simon's Cat is really scared of spiders,
+Simon's Cat promised to his girlfriend to go to the Halloween party, but he's really scared of spiders,
 and at the Halloween party there will be many of them everywhere.
 So he's trying to hide into a box, and as you can see, the box is too small.
 Every move he makes can be thought as one state.
@@ -47,7 +47,7 @@ and subsequently calling the appropriate functions to create new states.
 </div>
 </div>
 NOTE:
-If you don't have any knowledge about threads in Clojure, you should read about [it](http://blog.clojuregirl.com/clojure_threads.html) first.
+If you don't have any knowledge about threads in Clojure, you should read [this](http://blog.clojuregirl.com/clojure_threads.html) first.
 
 ## How we can manage state (or how the data might change over time)
 <div>
@@ -69,8 +69,8 @@ Cats love candies and as we know, their favorite ones are yummy marshmallows and
 We can create a _var_ by using `def`: `(def marshmallows-in-the-bag)`.
 This _var_ will be a reference to the amount of marshmallows in one bag.
 
-If we define a _var_ as `^:dynamic` (by adding the `:^dynamic` metadata part),
-we'll be able to rebound it in a different context later and this rebinding will be available only within its dynamic scope.
+If we define a _var_ as `^:dynamic` (by adding the `^:dynamic` metadata part),
+we'll also be able to rebound it in a different context later and this rebinding will be available only within its dynamic scope.
 
 ```clojure
 (def ^:dynamic *marshmallows-in-the-bag* 30)
@@ -93,7 +93,7 @@ In this first case, the scope is the code block where we define the symbols. The
 The lexical scope can be defined for example by the `let` block.
 
 Let's imagine that in the bag there are `30` marshmallows.
-We will define `marshmallows-in-the-bag` with a value of `30`.
+We will define `marshmallows-in-the-bag` with an initial value of `30`.
 
 ```clojure
 (def marshmallows-in-the-bag 30)
@@ -120,7 +120,7 @@ we'll find out that there are `20` marshmallows left in the bag.
 
 ### Dynamic Scope
 
-In contrast to _lexical scope_, the dynamic scope does not depend on the code block, but on the runtime call stack.
+In contrast to _lexical scope_, the _dynamic scope_ does not depend on the code block, but on the runtime call stack.
 
 The best way to understand the difference is to look at the code below.
 
@@ -130,7 +130,8 @@ The best way to understand the difference is to look at the code below.
 (defn marshmallows-left []
   (println (str "Marshmallows in the bag: " *marshmallows-in-the-bag*)))
 
-(defn number-of-marshmallows-left [marshmallows-eaten]
+(defn number-of-marshmallows-left
+  [marshmallows-eaten]
   (binding [*marshmallows-in-the-bag* (- *marshmallows-in-the-bag* marshmallows-eaten)]
     (marshmallows-left)))
 ```
@@ -154,7 +155,8 @@ To show the difference between the two scopes we'll do the same using the `let` 
 (defn marshmallows-left []
   (println (str "Marshmallows: " *marshmallows-in-the-bag*)))
 
-(defn number-of-marshmallows-left [marshmallows-eaten]
+(defn number-of-marshmallows-left
+  [marshmallows-eaten]
   (let [*marshmallows-in-the-bag* (- *marshmallows-in-the-bag* marshmallows-eaten)]
     (marshmallows-left)))
 ```
@@ -166,7 +168,7 @@ And if we call `numbers-of-marshmallows-left` with `10` as argument, the result 
 ;;=> Marshmallows: 30
 ```
 
-That's because we defined `marshmallows-in-the-bag` in the `let` code block and as we know the new value of the `marshmallows-in-the-bag` is valid only within its lexical scope (hence not in the function `marshmallows-left`, for which the value of `*marshmallows-in-the bag*` is still 30).
+That's because we defined `*marshmallows-in-the-bag*` in the `let` code block and as we know the new value of `*marshmallows-in-the-bag*` is valid only within its lexical scope (hence not in the function `marshmallows-left`, for which the value of `*marshmallows-in-the bag*` is still 30).
 
 ### Atoms
 
@@ -205,8 +207,7 @@ This is how `swap!` behaves under the hood:
 ```
 We created a `number-of-marshmalloes-left` function, which takes one argument `marshmallows-eaten`.
 We passed to `swap!` a function which will be called with the current value of `marshmallows-in-the-bag`
-as first argument. This function subtracts `marshmallows-eaten` from the current
-state.
+as first argument. This function subtracts `marshmallows-eaten` from the current state.
 
 ```clojure
 (number-of-marshmallows-left 10)
@@ -246,9 +247,9 @@ number of threads is slightly greater than the number of physical processors),
 while `send-off` an expandable thread pool. You should not use `send` for
 blocking operations, or other agents may not be able to make progress. With
 `send-off` you can use actions that may block, like reading a file, because
-each task get potentially a dedicated thread. More info
+each task will get potentially a dedicated thread. More info
 [here](http://stackoverflow.com/questions/1646351/what-is-the-difference-between-clojures-send-and-send-off-functions-with-re)
-and [here](http://clojure-doc.org/articles/language/concurrency_and_parallelism.html#agents)
+and [here](http://clojure-doc.org/articles/language/concurrency_and_parallelism.html#agents).
 
 ```clojure
 (defn number-of-marshmallows-left
@@ -259,13 +260,13 @@ and [here](http://clojure-doc.org/articles/language/concurrency_and_parallelism.
 If you call the `number-of-marshmallows-left` function,
 there's a possibility that the value is still not updated.
 
-```Clojure
+```clojure
 @marshmallows-in-the-bag
 ;;=> 30
 ```
 Few seconds later...
 
-```Clojure
+```clojure
 @marshmallows-in-the-bag
 ;;=> 20
 ```
@@ -299,7 +300,7 @@ First we need to define the _refs_ for `marshmallow`, `gummy-bears`,
 We can dereference _refs_ as usual:
 
 ```clojure
-@greg
+@simona
 ;;=> {:candies-eaten 0}
 ```
 
@@ -316,11 +317,11 @@ It means that _refs_ will be updated in a transactional, coordinated way.
   (if (> (:count-in-the-bag @candy) 0)
     (dosync
      (alter candy update-in [:count-in-the-bag] dec)
-     (alter name update-in [:candies-eaten] inc))
+     (alter cat update-in [:candies-eaten] inc))
   (println (str "No candies in the " (:name @candy) " bag"))))
 ```
 
-Let's see what happens when Simona east one gummy bear:
+Let's see what happens when Simona eats one gummy bear:
 
 ```clojure
 (eat-candy simona gummy-bears)
@@ -333,12 +334,10 @@ Let's see what happens when Simona east one gummy bear:
 ;;=> {:candies-eaten 1}
 
 @marshmallow
-;;=> {:name "marshmallow"
-;;    :count-in-the-bag 30}
+;;=> {:name "marshmallow", :count-in-the-bag 30}
 
 @gummy-bears
-;; => {:name "gummy-bears"
-;;     :count-in-the-bag 19}
+;; => {:name "gummy-bears", :count-in-the-bag 19}
 ```
 
 <div>
