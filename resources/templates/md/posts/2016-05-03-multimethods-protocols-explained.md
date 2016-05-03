@@ -1,5 +1,5 @@
 {:title "Clojure Explained - Multimethods and Protocols"
- :description  "Abstractions are important both in life and programming and we use them quite often, even if sometimes we don't realize it. We saw in the previous posts that Clojure provides higher-order functions to make our code more re-usable and macros for eliminating boilerplate. Now let's see how we can use multimethods and protocols when we need something more sophisticated."
+ :description  "Abstractions are important both in life and programming and we use them quite often, even if sometimes we don't realize it. We saw in the previous posts that Clojure provides higher-order functions to make our code more re-usable and macros for eliminating boilerplate code. Now let's see how we can use multimethods and protocols when we need something more sophisticated."
  :layout :post
  :tags  ["Clojure" "ClojureScript" "Fundamentals"]
  :toc false
@@ -19,7 +19,7 @@ All these objects act as abstractions.
 
 Another good analogy is a trip from point A to B: imagine you are planning a
 trip and know that upon arrival to the airport you will rent a car and drive to
-the city center. That's all you know: that you will rent **a** car and you will
+the city center. That's all you know: that you will rent _a_ car and you will
 _drive_ it. You will decide at "run-time" which specific car it will be but
 during planning time you don't need to worry about it.
 
@@ -42,7 +42,7 @@ In Java the main abstraction tool is the `interface`, which contains a set
 of methods without body which other classes can implement. The advantage of
 course is that then we can use the interface instead of a concrete type in our code
 (see point 1 above) and then create many classes (see point 2) which
-provide different implementation of the same operation.
+provide different implementations of the same operation.
 
 Abstractions are all about **reusability** and **extensibility**, so let's see
 what tools Clojure provides to deal with them.
@@ -161,7 +161,7 @@ guitar players.
 
 You can see how easy is to provide new implementations for different
 roles, or in other words to extend the algorithm with new
-behaviors -- again: without having to modify any existing code. Before
+behaviors -- again, without having to modify any existing code. Before
 we cover protocols few notes:
 
 * `(defmulti tribute (fn [musician] (:role musician)))` could be
@@ -199,11 +199,11 @@ this case).
 
 The closest construct in the Java world is the `interface`:
 * Both build a layer of abstraction by providing only specification,
-not implementation, of behaviors.
+  not implementation, of behaviors.
 * Both are dispatched on the type of the first parameter passed in the
   call. In Java this is just the object that implements the interface.
-* Datatypes can implement multiple protocols.
-* If you try to implement a protocol without providing all
+* Datatypes can implement multiple protocols/interfaces.
+* If you try to implement a protocol/interface without providing all
   needed methods an error will be thrown.
 
 One big difference is that in Java existing types cannot be extended
@@ -225,7 +225,7 @@ with me as this is only an example. The first thing we do is use
 together two methods. `this` refers to the object passed as first parameter
 of course and on which type we'll dispatch the correct function.
 
-If we now try to run `(my-print 1)` we'll receive an error:
+If now we try to run `(my-print 1)` we'll receive an error:
 
 ```clojure
 (my-print 1)
@@ -448,7 +448,7 @@ object.
 Few notes on datatypes:
 
 * Datatypes are declared inside namespaces like everything else so if
-  you want to use them in antoher namespace you need to _import_ them.
+  you want to use them in another namespace you need to _import_ them.
 * You can use the `reify` macro to create an anonymous instance of a datatype
   (that implements a protocol).
 * If you `assoc` or `update` a record, a new record will be returned:
